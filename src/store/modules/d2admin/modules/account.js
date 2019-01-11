@@ -55,7 +55,7 @@ export default {
           /*  早期menu设计方法，暂时保留 */
           // （未完成）完整设计
           // 后台仅返回链接表
-          /*let menuHeader = []
+          /* let menuHeader = []
           let menuAside = []
           switch (res.usertype) {
             // 管理员目前仅供开发使用
@@ -85,7 +85,7 @@ export default {
               menuAside = [ ...index, ...(monitor[0].children) ]
               console.log('monitor')
               break
-          }*/
+          } */
           /*  早期menu设计方法，暂时保留 */
 
           /*  menu分离设计方法 */

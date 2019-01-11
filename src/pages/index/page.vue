@@ -40,16 +40,16 @@ export default {
   name: 'index',
   components: {
   },
-  data(){
+  data () {
     return {
 
     }
   },
-  mounted() {
+  mounted () {
     this.drawLine()
   },
   methods: {
-    drawLine(){
+    drawLine () {
       // 基于准备好的dom，初始化echarts实例
       let myChart1 = this.$echarts.init(document.getElementById('myChart1'))
       // 绘制图表
@@ -57,7 +57,7 @@ export default {
         title: {
           text: '系统访问情况'
         },
-        tooltip : {
+        tooltip: {
           trigger: 'axis',
           axisPointer: {
             type: 'cross',
@@ -67,7 +67,7 @@ export default {
           }
         },
         legend: {
-          data:['管理员','提供商','审查员','监管者']
+          data: ['管理员', '提供商', '审查员', '监管者']
         },
         toolbox: {
           feature: {
@@ -80,43 +80,43 @@ export default {
           bottom: '3%',
           containLabel: true
         },
-        xAxis : [
+        xAxis: [
           {
-            type : 'category',
-            boundaryGap : false,
-            data : ['周一','周二','周三','周四','周五','周六','周日']
+            type: 'category',
+            boundaryGap: false,
+            data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
           }
         ],
-        yAxis : [
+        yAxis: [
           {
-            type : 'value'
+            type: 'value'
           }
         ],
-        series : [
+        series: [
           {
-            name:'管理员',
-            type:'line',
+            name: '管理员',
+            type: 'line',
             stack: '总量',
             areaStyle: {},
-            data:[120, 132, 101, 134, 90, 230, 210]
+            data: [120, 132, 101, 134, 90, 230, 210]
           },
           {
-            name:'提供商',
-            type:'line',
+            name: '提供商',
+            type: 'line',
             stack: '总量',
             areaStyle: {},
-            data:[220, 182, 191, 234, 290, 330, 310]
+            data: [220, 182, 191, 234, 290, 330, 310]
           },
           {
-            name:'审查员',
-            type:'line',
+            name: '审查员',
+            type: 'line',
             stack: '总量',
             areaStyle: {},
-            data:[150, 232, 201, 154, 190, 330, 410]
+            data: [150, 232, 201, 154, 190, 330, 410]
           },
           {
-            name:'监管者',
-            type:'line',
+            name: '监管者',
+            type: 'line',
             stack: '总量',
             label: {
               normal: {
@@ -124,8 +124,8 @@ export default {
                 position: 'top'
               }
             },
-            areaStyle: {normal: {}},
-            data:[820, 932, 901, 934, 1290, 1330, 1320]
+            areaStyle: { normal: {} },
+            data: [820, 932, 901, 934, 1290, 1330, 1320]
           }
         ]
       })
@@ -136,17 +136,17 @@ export default {
       myChart2.setOption({
         tooltip: {
           trigger: 'item',
-          formatter: "{a} <br/>{b}: {c} ({d}%)"
+          formatter: '{a} <br/>{b}: {c} ({d}%)'
         },
         legend: {
           orient: 'vertical',
           x: 'left',
-          data:['未审核','已审核','已确认','已识别']
+          data: ['未审核', '已审核', '已确认', '已识别']
         },
         series: [
           {
-            name:'服务',
-            type:'pie',
+            name: '服务',
+            type: 'pie',
             radius: ['50%', '70%'],
             avoidLabelOverlap: false,
             label: {
@@ -167,11 +167,11 @@ export default {
                 show: false
               }
             },
-            data:[
-              {value:335, name:'未审核'},
-              {value:310, name:'已审核'},
-              {value:234, name:'已确认'},
-              {value:548, name:'已识别'}
+            data: [
+              { value: 335, name: '未审核' },
+              { value: 310, name: '已审核' },
+              { value: 234, name: '已确认' },
+              { value: 548, name: '已识别' }
             ]
           }
         ]
@@ -180,9 +180,9 @@ export default {
       // 基于准备好的dom，初始化echarts实例
       let myChart3 = this.$echarts.init(document.getElementById('myChart3'))
       var schema = [
-        {name: 'date', index: 0, text: '日'},
-        {name: 'newUser', index: 1, text: '新建用户'},
-        {name: '新建服务', index: 2, text: '新建服务'}
+        { name: 'date', index: 0, text: '日' },
+        { name: 'newUser', index: 1, text: '新建用户' },
+        { name: '新建服务', index: 2, text: '新建服务' }
       ]
       // 绘制图表
       myChart3.setOption({
@@ -210,13 +210,13 @@ export default {
           borderColor: '#777',
           borderWidth: 1,
           formatter: function (obj) {
-            var value = obj.value;
-            return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">'
-              + obj.seriesName + ' ' + value[0] + '日：'
-              + value[7]
-              + '</div>'
-              + schema[1].text + '：' + value[1] + '<br>'
-              + schema[2].text + '：' + value[2] + '<br>';
+            var value = obj.value
+            return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">' +
+              obj.seriesName + ' ' + value[0] + '日：' +
+              value[7] +
+              '</div>' +
+              schema[1].text + '：' + value[1] + '<br>' +
+              schema[2].text + '：' + value[2] + '<br>'
           }
         },
         xAxis: {
@@ -331,37 +331,37 @@ export default {
               }
             },
             data: [
-              [1,55,9,56,0.46,18,6,"一般"],
-              [2,25,11,21,0.65,34,9,"一般"],
-              [3,56,7,63,0.3,14,5,"一般"],
-              [4,33,7,29,0.33,16,6,"一般"],
-              [5,42,24,44,0.76,40,16,"一般"],
-              [6,82,58,90,1.77,68,33,"一般"],
-              [7,74,49,77,1.46,48,27,"一般"],
-              [8,78,55,80,1.29,59,29,"一般"],
-              [9,267,216,280,4.8,108,64,"活跃"],
-              [10,185,127,216,2.52,61,27,"活跃"],
-              [11,39,19,38,0.57,31,15,"一般"],
-              [12,41,11,40,0.43,21,7,"一般"],
-              [13,64,38,74,1.04,46,22,"一般"],
-              [14,108,79,120,1.7,75,41,"活跃"],
-              [15,108,63,116,1.48,44,26,"活跃"],
-              [16,33,6,29,0.34,13,5,"一般"],
-              [17,94,66,110,1.54,62,31,"一般"],
-              [18,186,142,192,3.88,93,79,"活跃"],
-              [19,57,31,54,0.96,32,14,"一般"],
-              [20,22,8,17,0.48,23,10,"一般"],
-              [21,39,15,36,0.61,29,13,"一般"],
-              [22,94,69,114,2.08,73,39,"一般"],
-              [23,99,73,110,2.43,76,48,"一般"],
-              [24,31,12,30,0.5,32,16,"一般"],
-              [25,42,27,43,1,53,22,"一般"],
-              [26,154,117,157,3.05,92,58,"活跃"],
-              [27,234,185,230,4.09,123,69,"活跃"],
-              [28,160,120,186,2.77,91,50,"活跃"],
-              [29,134,96,165,2.76,83,41,"活跃"],
-              [30,52,24,60,1.03,50,21,"一般"],
-              [31,46,5,49,0.28,10,6,"一般"]
+              [1, 55, 9, 56, 0.46, 18, 6, '一般'],
+              [2, 25, 11, 21, 0.65, 34, 9, '一般'],
+              [3, 56, 7, 63, 0.3, 14, 5, '一般'],
+              [4, 33, 7, 29, 0.33, 16, 6, '一般'],
+              [5, 42, 24, 44, 0.76, 40, 16, '一般'],
+              [6, 82, 58, 90, 1.77, 68, 33, '一般'],
+              [7, 74, 49, 77, 1.46, 48, 27, '一般'],
+              [8, 78, 55, 80, 1.29, 59, 29, '一般'],
+              [9, 267, 216, 280, 4.8, 108, 64, '活跃'],
+              [10, 185, 127, 216, 2.52, 61, 27, '活跃'],
+              [11, 39, 19, 38, 0.57, 31, 15, '一般'],
+              [12, 41, 11, 40, 0.43, 21, 7, '一般'],
+              [13, 64, 38, 74, 1.04, 46, 22, '一般'],
+              [14, 108, 79, 120, 1.7, 75, 41, '活跃'],
+              [15, 108, 63, 116, 1.48, 44, 26, '活跃'],
+              [16, 33, 6, 29, 0.34, 13, 5, '一般'],
+              [17, 94, 66, 110, 1.54, 62, 31, '一般'],
+              [18, 186, 142, 192, 3.88, 93, 79, '活跃'],
+              [19, 57, 31, 54, 0.96, 32, 14, '一般'],
+              [20, 22, 8, 17, 0.48, 23, 10, '一般'],
+              [21, 39, 15, 36, 0.61, 29, 13, '一般'],
+              [22, 94, 69, 114, 2.08, 73, 39, '一般'],
+              [23, 99, 73, 110, 2.43, 76, 48, '一般'],
+              [24, 31, 12, 30, 0.5, 32, 16, '一般'],
+              [25, 42, 27, 43, 1, 53, 22, '一般'],
+              [26, 154, 117, 157, 3.05, 92, 58, '活跃'],
+              [27, 234, 185, 230, 4.09, 123, 69, '活跃'],
+              [28, 160, 120, 186, 2.77, 91, 50, '活跃'],
+              [29, 134, 96, 165, 2.76, 83, 41, '活跃'],
+              [30, 52, 24, 60, 1.03, 50, 21, '一般'],
+              [31, 46, 5, 49, 0.28, 10, 6, '一般']
             ]
           }
         ]
@@ -370,12 +370,12 @@ export default {
       // 基于准备好的dom，初始化echarts实例
       let myChart4 = this.$echarts.init(document.getElementById('myChart4'))
       // 绘制图表
-      myChart4.setOption( {
+      myChart4.setOption({
         title: {
           text: '活跃服务指标'
         },
         legend: {
-          data: ['图一','图二']
+          data: ['图一', '图二']
         },
         radar: [
           {
@@ -392,9 +392,9 @@ export default {
             splitNumber: 4,
             shape: 'circle',
             name: {
-              formatter:'【{value}】',
+              formatter: '【{value}】',
               textStyle: {
-                color:'#72ACD1'
+                color: '#72ACD1'
               }
             },
             splitArea: {
