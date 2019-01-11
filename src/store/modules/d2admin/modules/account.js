@@ -1,7 +1,7 @@
 import util from '@/libs/util.js'
 import { AccountLogin } from '@/api/sys/login'
 import { header } from '@/menu/header'
-import aside from '@/menu/aside'
+import { aside } from '@/menu/aside'
 import index from '@/menu/index/index'
 
 // 添加不同类型的链接
@@ -52,9 +52,10 @@ export default {
           // 直接内置四种用户类型：admin provider reviewer monitor
           // 通过用户类型配置当前用户的链接表 (header and aside) ！路由表
 
+          /*  早期menu设计方法，暂时保留 */
           // （未完成）完整设计
           // 后台仅返回链接表
-          let menuHeader = []
+          /*let menuHeader = []
           let menuAside = []
           switch (res.usertype) {
             // 管理员目前仅供开发使用
@@ -76,32 +77,48 @@ export default {
               menuHeader = [ ...index, ...(reviewer[0].children) ]
               // menuHeader.push(...provider)
               menuAside = [ ...index, ...(reviewer[0].children) ]
-              // menuHeader = header
-              // menuHeader.push(...reviewer)
-              // menuAside = aside
-              // menuAside.push(...reviewer)
-              // menuHeader.push(...(reviewer[0].children))
-              // menuAside.push(...(reviewer[0].children))
               console.log('reviewer')
               break
             case 'monitor':
               menuHeader = [ ...index, ...(monitor[0].children) ]
               // menuHeader.push(...provider)
               menuAside = [ ...index, ...(monitor[0].children) ]
-              // menuHeader = header
-              // menuHeader.push(...monitor)
-              // menuAside = aside
-              // menuAside.push(...monitor)
-              // menuHeader.push(...(monitor[0].children))
-              // menuAside.push(...(monitor[0].children))
               console.log('monitor')
               break
+          }*/
+          /*  早期menu设计方法，暂时保留 */
+
+          /*  menu分离设计方法 */
+          // 异步获取菜单
+          let menu = []
+          switch (res.usertype) {
+            // 管理员目前仅供开发使用
+            case 'admin':
+              menu = header
+              break
+            case 'provider':
+              menu = [...index, ...(provider[0].children)]
+              break
+            case 'reviewer':
+              menu = [...index, ...(reviewer[0].children)]
+              break
+            case 'monitor':
+              menu = [...index, ...(monitor[0].children)]
+              break
           }
-          console.log('each router:' + JSON.stringify(menuHeader))
+          /*  menu分离设计方法 */
+
+          /*  早期menu设计方法，暂时保留 */
           // 异步设置顶栏菜单
-          await dispatch('d2admin/menu/headerSet', { menuHeader }, { root: true })
+          // await dispatch('d2admin/menu/headerSet', { menuHeader }, { root: true })
           // 异步设置侧边菜单
-          await dispatch('d2admin/menu/asideSet', { menuAside }, { root: true })
+          // await dispatch('d2admin/menu/asideSet', { menuAside }, { root: true })
+          /*  早期menu设计方法，暂时保留 */
+
+          // 异步设置顶栏、侧栏菜单
+          await dispatch('d2admin/menu/set', {
+            userMenu: menu
+          }, { root: true })
 
           // 设置 vuex 用户信息
           await dispatch('d2admin/user/set', {
@@ -167,6 +184,8 @@ export default {
       return new Promise(async resolve => {
         // DB -> store 加载用户名
         await dispatch('d2admin/user/load', null, { root: true })
+        // DB -> store 加载路由菜单
+        await dispatch('d2admin/menu/load', null, { root: true })
         // DB -> store 加载主题
         await dispatch('d2admin/theme/load', null, { root: true })
         // DB -> store 加载页面过渡效果设置

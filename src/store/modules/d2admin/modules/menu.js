@@ -56,6 +56,7 @@ export default {
      * @param {Object} state vuex state
      */
     asideCollapseLoad ({ state, dispatch }) {
+      console.log('header:' + JSON.stringify(state.header))
       return new Promise(async resolve => {
         // store 赋值
         state.asideCollapse = await dispatch('d2admin/db/get', {
@@ -64,6 +65,49 @@ export default {
           defaultValue: setting.menu.asideCollapse,
           user: true
         }, { root: true })
+        // end
+        resolve()
+      })
+    },
+    /**
+     * 设置侧边栏展开或者收缩
+     * @param {Object} state vuex state
+     * @param {Boolean} menu is menu
+     */
+    set ({ state, dispatch }, menu) {
+      console.log('menu set:' + JSON.stringify(menu.userMenu))
+      return new Promise(async resolve => {
+        // store 赋值
+        state.aside = menu.userMenu
+        state.header = menu.userMenu
+        // 持久化
+        await dispatch('d2admin/db/set', {
+          dbName: 'sys',
+          path: 'menu.menu',
+          value: state.header,
+          user: true
+        }, { root: true })
+        // end
+        resolve()
+      })
+    },
+    /**
+     * 从持久化数据读取侧边栏展开或者收缩
+     * @param {Object} state vuex state
+     */
+    load ({ state, dispatch, commit }) {
+      return new Promise(async resolve => {
+        // store 赋值
+        let menu = await dispatch('d2admin/db/get', {
+          dbName: 'sys',
+          path: 'menu.menu',
+          defaultValue: [],
+          user: true
+        }, { root: true })
+        // 设置顶栏菜单
+        commit('headerSet', menu)
+        // 设置侧栏菜单
+        commit('asideSet', menu)
         // end
         resolve()
       })
@@ -87,7 +131,7 @@ export default {
      */
     asideSet ({ commit }, { menuAside }) {
       return new Promise(async resolve => {
-        // 设置顶栏菜单
+        // 设置侧栏菜单
         commit('asideSet', menuAside)
         // end
         resolve()
