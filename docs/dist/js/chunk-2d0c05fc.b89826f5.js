@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0c05fc"],{4208:function(e,n,t){"use strict";t.r(n);var a=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("d2-container",[t("template",{slot:"header"},[e._v("Page admin")])],2)},c=[],i={name:"admin"},l=i,o=t("2877"),u=Object(o["a"])(l,a,c,!1,null,null,null);u.options.__file="index.vue";n["default"]=u.exports}}]);
+//# sourceMappingURL=chunk-2d0c05fc.b89826f5.js.map

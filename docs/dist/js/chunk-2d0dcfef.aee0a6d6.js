@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0dcfef"],{8001:function(e,n,t){"use strict";t.r(n);var o=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("d2-container",[t("template",{slot:"header"},[e._v("账户信息查看")])],2)},l=[],a={name:"monitor"},c=a,i=t("2877"),r=Object(i["a"])(c,o,l,!1,null,null,null);r.options.__file="index1.vue";n["default"]=r.exports}}]);
+//# sourceMappingURL=chunk-2d0dcfef.aee0a6d6.js.map

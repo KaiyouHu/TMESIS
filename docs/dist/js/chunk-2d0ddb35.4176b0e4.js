@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0ddb35"],{8304:function(e,n,t){"use strict";t.r(n);var o=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("d2-container",[t("template",{slot:"header"},[e._v("已标识申请管理")])],2)},l=[],a={name:"monitor"},i=a,r=t("2877"),u=Object(r["a"])(i,o,l,!1,null,null,null);u.options.__file="index5.vue";n["default"]=u.exports}}]);
+//# sourceMappingURL=chunk-2d0ddb35.4176b0e4.js.map

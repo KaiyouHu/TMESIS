@@ -20,15 +20,15 @@
         <div id="myChart1" :style="{ width:'800px',height:'300px' }"></div>
       </el-col>
       <el-col :span="8">
-        <div id="myChart2" :style="{ width:'400px',height:'300px' }"></div>
+        <div id="myChart4" :style="{ width:'600px',height:'300px' }"></div>
       </el-col>
     </el-row>
     <el-row :gutter="20">
-      <el-col :span="12">
+      <el-col :span="16">
         <div id="myChart3" :style="{ width:'600px',height:'300px' }"></div>
       </el-col>
-      <el-col :span="12">
-        <div id="myChart4" :style="{ width:'600px',height:'300px' }"></div>
+      <el-col :span="8">
+        <div id="myChart2" :style="{ width:'400px',height:'300px' }"></div>
       </el-col>
     </el-row>
 
@@ -178,14 +178,14 @@ export default {
       })
 
       // 基于准备好的dom，初始化echarts实例
-      let myChart3 = this.$echarts.init(document.getElementById('myChart3'))
-      var schema = [
+      /*let myChart3 = this.$echarts.init(document.getElementById('myChart3'))*/
+      /*var schema = [
         { name: 'date', index: 0, text: '日' },
         { name: 'newUser', index: 1, text: '新建用户' },
         { name: '新建服务', index: 2, text: '新建服务' }
-      ]
+      ]*/
       // 绘制图表
-      myChart3.setOption({
+      /*myChart3.setOption({
         backgroundColor: '#404a59',
         color: [
           '#dd4444', '#fec42c', '#80F1BE'
@@ -365,12 +365,12 @@ export default {
             ]
           }
         ]
-      })
+      })*/
 
       // 基于准备好的dom，初始化echarts实例
-      let myChart4 = this.$echarts.init(document.getElementById('myChart4'))
+      /*let myChart4 = this.$echarts.init(document.getElementById('myChart4'))*/
       // 绘制图表
-      myChart4.setOption({
+      /*myChart4.setOption({
         title: {
           text: '活跃服务指标'
         },
@@ -454,7 +454,7 @@ export default {
             ]
           }
         ]
-      })
+      })*/
     }
   }
 }
