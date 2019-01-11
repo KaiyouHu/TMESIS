@@ -6,7 +6,7 @@ import setting from '@/setting.js'
 export default {
   namespaced: true,
   state: {
-    // D2Admin 版本
+    // TMESIS 版本
     version: setting.releases.version,
     // 最新版本的信息
     latest: {},
@@ -24,7 +24,7 @@ export default {
           let versionGet = res.tag_name
           const update = semver.lt(state.version, versionGet)
           if (update) {
-            util.log.capsule('D2Admin', `New version ${res.name}`)
+            util.log.capsule('TMESIS', `New version ${res.name}`)
             console.log(`版本号: ${res.tag_name} | 详情 ${res.html_url}`)
             commit('updateSet', true)
           }
@@ -41,8 +41,8 @@ export default {
      * @param {Object} state vuex state
      */
     versionShow (state) {
-      util.log.capsule('D2Admin', `v${state.version}`)
-      console.log('Github https://github.com/d2-projects/d2-admin')
+      util.log.capsule('TMESIS', `v${state.version}`)
+      console.log('Github https://github.com/KaiyouHu/TMESIS')
       console.log('Doc    https://d2-projects.github.io/d2-admin-doc/zh/')
     },
     /**
