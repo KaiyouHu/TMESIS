@@ -7,7 +7,7 @@ Mock.mock('/api/provider/service', 'post', ({ url, type, body }) => {
   console.log('mock:' + JSON.stringify(bodyObj))
   bodyObj.service_id = generateUUID()
   serviceDB.push(bodyObj)
-  let service = serviceDB // .find()
+  let service = serviceDB
   console.log('service:' + JSON.stringify(service))
   // 同时生成申请
   let apply = {
@@ -53,7 +53,7 @@ function generateUUID () {
 // 例子：
 // (new Date()).Format("yyyy-MM-dd hh:mm:ss.S") ===> 2006-07-02 08:09:04.423
 // (new Date()).Format("yyyy-M-d h:m:s.S")   ===> 2006-7-2 8:9:4.18
-Date.prototype.Format = function (fmt) { // author: meizz
+Date.prototype.Format = function (fmt) {
   var o = {
     'M+': this.getMonth() + 1, // 月份
     'd+': this.getDate(), // 日

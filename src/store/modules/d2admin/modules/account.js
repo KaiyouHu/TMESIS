@@ -95,6 +95,7 @@ export default {
             // 管理员目前仅供开发使用
             case 'admin':
               menu = header
+              // menu = aside
               break
             case 'provider':
               menu = [...index, ...(provider[0].children)]

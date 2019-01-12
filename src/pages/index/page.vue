@@ -14,35 +14,53 @@
         </div>
       </template>
     </d2-page-cover>-->
-
     <el-row :gutter="20">
-      <el-col :span="16">
-        <div id="myChart1" :style="{ width:'800px',height:'300px' }"></div>
-      </el-col>
-      <el-col :span="8">
-        <div id="myChart4" :style="{ width:'600px',height:'300px' }"></div>
+      <el-col :span="4" v-for="(infor, i) in inforCardData" :key="`infor-${i}`" style="height: 120px;">
+        <infor-card shadow :color="infor.color" :icon="infor.icon" :icon-size="36">
+          <count-to :end="infor.count" count-class="count-style"/>
+          <p>{{ infor.title }}</p>
+        </infor-card>
       </el-col>
     </el-row>
+    <el-row :gutter="20" style="margin-top: 20px;">
+      <el-col :span="24">
+        <div id="myChart1" :style="{ width:'100%',height:'400px' }"></div>
+      </el-col>
+      <!--<el-col :span="8">
+        <div id="myChart4" :style="{ width:'600px',height:'300px' }"></div>
+      </el-col>-->
+    </el-row>
     <el-row :gutter="20">
-      <el-col :span="16">
+      <!--<el-col :span="16">
         <div id="myChart3" :style="{ width:'600px',height:'300px' }"></div>
-      </el-col>
-      <el-col :span="8">
+      </el-col>-->
+      <!--<el-col :span="8">
         <div id="myChart2" :style="{ width:'400px',height:'300px' }"></div>
-      </el-col>
+      </el-col>-->
     </el-row>
 
   </d2-container>
 </template>
 
 <script>
+import InforCard from '@/components/info-card'
+import CountTo from '@/components/count-to'
 export default {
   name: 'index',
   components: {
+    InforCard,
+    CountTo
   },
   data () {
     return {
-
+      inforCardData: [
+        { title: '新增用户', icon: 'md-person-add', count: 803, color: '#2d8cf0' },
+        { title: '累计点击', icon: 'md-locate', count: 23432, color: '#19be6b' },
+        { title: '新增问答', icon: 'md-help-circle', count: 142, color: '#ff9900' },
+        { title: '分享统计', icon: 'md-share', count: 657, color: '#ed3f14' },
+        { title: '新增互动', icon: 'md-chatbubbles', count: 12, color: '#E46CBB' },
+        { title: '新增页面', icon: 'md-map', count: 14, color: '#9A66E4' }
+      ]
     }
   },
   mounted () {
@@ -131,9 +149,9 @@ export default {
       })
 
       // 基于准备好的dom，初始化echarts实例
-      let myChart2 = this.$echarts.init(document.getElementById('myChart2'))
+      /* let myChart2 = this.$echarts.init(document.getElementById('myChart2')) */
       // 绘制图表
-      myChart2.setOption({
+      /*myChart2.setOption({
         tooltip: {
           trigger: 'item',
           formatter: '{a} <br/>{b}: {c} ({d}%)'
@@ -175,17 +193,17 @@ export default {
             ]
           }
         ]
-      })
+      })*/
 
       // 基于准备好的dom，初始化echarts实例
-      /*let myChart3 = this.$echarts.init(document.getElementById('myChart3'))*/
-      /*var schema = [
+      /* let myChart3 = this.$echarts.init(document.getElementById('myChart3')) */
+      /* var schema = [
         { name: 'date', index: 0, text: '日' },
         { name: 'newUser', index: 1, text: '新建用户' },
         { name: '新建服务', index: 2, text: '新建服务' }
-      ]*/
+      ] */
       // 绘制图表
-      /*myChart3.setOption({
+      /* myChart3.setOption({
         backgroundColor: '#404a59',
         color: [
           '#dd4444', '#fec42c', '#80F1BE'
@@ -365,12 +383,12 @@ export default {
             ]
           }
         ]
-      })*/
+      }) */
 
       // 基于准备好的dom，初始化echarts实例
-      /*let myChart4 = this.$echarts.init(document.getElementById('myChart4'))*/
+      /* let myChart4 = this.$echarts.init(document.getElementById('myChart4')) */
       // 绘制图表
-      /*myChart4.setOption({
+      /* myChart4.setOption({
         title: {
           text: '活跃服务指标'
         },
@@ -454,7 +472,7 @@ export default {
             ]
           }
         ]
-      })*/
+      }) */
     }
   }
 }
