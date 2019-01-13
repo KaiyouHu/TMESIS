@@ -56,7 +56,7 @@ export default {
      * @param {Object} state vuex state
      */
     asideCollapseLoad ({ state, dispatch }) {
-      console.log('header:' + JSON.stringify(state.header))
+      // console.log('header:' + JSON.stringify(state.header))
       return new Promise(async resolve => {
         // store 赋值
         state.asideCollapse = await dispatch('d2admin/db/get', {

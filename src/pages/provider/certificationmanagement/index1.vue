@@ -76,23 +76,50 @@
     <!-- 依赖性弹窗 -->
     <el-dialog title="依赖性" width="60%" :visible.sync="dialogDependenceVisiable">
 
-      <el-form ref="formDependence" @submit.native.prevent label-width="240px">
-        <template v-for="answer_list in formDependence">
-          <el-form-item :key="answer_list.dependence_question_id"  :label="answer_list.dependence_question_describe">
-            <el-radio-group v-model="answer_list.dependence_answer_item_id">
-              <el-radio
-                      v-for="item in answer_list.dependence_answer_item_info"
-                      :key="item.dependence_answer_item_id"
-                      border
-                      :label="item.dependence_answer_item_id">
-                {{item.dependence_answer_item}}}
-              </el-radio>
-            </el-radio-group>
+      <el-form ref="formDependence" label-width="100px" class="demo-dynamic">
+        <el-form-item
+                :label="依赖"
+        >
+          <el-col class="inline" :span="7" :gutter="1">
+            依赖项1
+          </el-col>
+          <el-col class="inline" :span="7" :gutter="1">
+            依赖项2
+          </el-col>
+          <el-col class="inline" :span="7" :gutter="1">
+            依赖项3
+          </el-col>
+        </el-form-item>
+        <template v-for="(domain, index) in formDependence">
+          <el-form-item
+                  :label="'依赖' + index"
+                  :key="domain.domain_id">
+            <el-col class="inline" :span="7" :gutter="1">
+              <el-form-item prop="domain.input1">
+                <el-input v-model="domain.input1"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col class="inline" :span="7" :gutter="1">
+              <el-form-item prop="domain.input2">
+                <el-input v-model="domain.input2"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col class="inline" :span="7" :gutter="1">
+              <el-form-item prop="domain.input3">
+                <el-input v-model="domain.input3"></el-input>
+              </el-form-item>
+            </el-col>
+            <!--
+            <el-input v-model="domain.input1"></el-input>
+            <el-input v-model="domain.input2"></el-input>
+            <el-input v-model="domain.input3"></el-input>
+            -->
+            <el-button @click.prevent="removeDomain(domain)">删除</el-button>
           </el-form-item>
         </template>
       </el-form>
-
       <div slot="footer" class="dialog-footer">
+        <el-button @click="addDomain()">添 加</el-button>
         <el-button @click="dialogDependenceVisiable = false">取 消</el-button>
         <el-button type="primary" @click="dialogDependenceVisiable = false">确 定</el-button>
       </div>
@@ -119,8 +146,16 @@ export default {
       formImportance: null,
       dialogImportanceVisiable: false,
       // 服务依赖性
-      formDependence: null,
-      dialogDependenceVisiable: false
+      dialogDependenceVisiable: false,
+      formDependence: [
+        {
+          domain_id: 1,
+          input1: '',
+          input2: '',
+          input3: ''
+        }
+      ]
+
 
     }
   },
@@ -177,15 +212,29 @@ export default {
     },
     callDependence: function (cuurentRow) {
       this.dialogDependenceVisiable = true
-      GetDependence(null)
+      /* GetDependence(null)
         .then(async res => {
           const responseData = res
           this.formDependence = responseData
         })
         .catch(err => {
           console.log('err: ', err)
-        })
-    }
+        }) */
+    },
+    addDomain: function() {
+      this.formDependence.push({
+        domain_id: Date.now(),
+        input1: '',
+        input2: '',
+        input3: ''
+      });
+    },
+    removeDomain: function(item) {
+      var index = this.formDependence.indexOf(item)
+      if (index !== -1) {
+        this.formDependence.splice(index, 1)
+      }
+    },
   }
 }
 </script>
