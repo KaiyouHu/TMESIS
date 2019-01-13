@@ -13,7 +13,7 @@
       <GridColumn field="service_describe" title="信息服务业务描述"></GridColumn>
       <GridColumn field="company_name" title="公司名"></GridColumn>
       <GridColumn field="username" title="用户名"></GridColumn>
-      <GridColumn title="操作" width="128px">
+      <!-- <GridColumn title="操作" width="128px">
         <template slot="header">
           <div class="item">
             <div class="title">操作</div>
@@ -23,7 +23,7 @@
           <LinkButton iconCls="icon-ok" :toggle="true" @click="confirmClick(scope.row)">确认</LinkButton>
           <LinkButton iconCls="icon-cancel" :toggle="true" :disabled="true">删除</LinkButton>
         </template>
-      </GridColumn>
+      </GridColumn> -->
     </DataGrid>
 
   </d2-container>

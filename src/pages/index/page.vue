@@ -151,7 +151,7 @@ export default {
       // 基于准备好的dom，初始化echarts实例
       /* let myChart2 = this.$echarts.init(document.getElementById('myChart2')) */
       // 绘制图表
-      /*myChart2.setOption({
+      /* myChart2.setOption({
         tooltip: {
           trigger: 'item',
           formatter: '{a} <br/>{b}: {c} ({d}%)'
@@ -193,7 +193,7 @@ export default {
             ]
           }
         ]
-      })*/
+      }) */
 
       // 基于准备好的dom，初始化echarts实例
       /* let myChart3 = this.$echarts.init(document.getElementById('myChart3')) */

@@ -109,11 +109,6 @@
                 <el-input v-model="domain.input3"></el-input>
               </el-form-item>
             </el-col>
-            <!--
-            <el-input v-model="domain.input1"></el-input>
-            <el-input v-model="domain.input2"></el-input>
-            <el-input v-model="domain.input3"></el-input>
-            -->
             <el-button @click.prevent="removeDomain(domain)">删除</el-button>
           </el-form-item>
         </template>
@@ -155,7 +150,6 @@ export default {
           input3: ''
         }
       ]
-
 
     }
   },
@@ -221,20 +215,20 @@ export default {
           console.log('err: ', err)
         }) */
     },
-    addDomain: function() {
+    addDomain: function () {
       this.formDependence.push({
         domain_id: Date.now(),
         input1: '',
         input2: '',
         input3: ''
-      });
+      })
     },
-    removeDomain: function(item) {
+    removeDomain: function (item) {
       var index = this.formDependence.indexOf(item)
       if (index !== -1) {
         this.formDependence.splice(index, 1)
       }
-    },
+    }
   }
 }
 </script>

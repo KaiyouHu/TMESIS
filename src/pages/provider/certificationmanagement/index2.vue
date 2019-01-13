@@ -13,7 +13,18 @@
       <GridColumn field="service_describe" title="信息服务业务描述"></GridColumn>
       <GridColumn field="company_name" title="公司名"></GridColumn>
       <GridColumn field="username" title="用户名"></GridColumn>
-      <GridColumn title="操作" width="128px">
+      <GridColumn width="64px">
+        <template slot="header">
+          <div class="item">
+            <div class="title">预评等级</div>
+          </div>
+        </template>
+        <template slot="body" slot-scope="scope">
+          <LinkButton :toggle="true" @click="showLevel(scope.row)">等级3</LinkButton>
+        </template>
+      </GridColumn>
+
+      <!-- <GridColumn title="操作" width="128px">
         <template slot="header">
           <div class="item">
             <div class="title">操作</div>
@@ -23,8 +34,18 @@
           <LinkButton iconCls="icon-ok" :toggle="true" @click="confirmClick(scope.row)">确认</LinkButton>
           <LinkButton iconCls="icon-cancel" :toggle="true" :disabled="true">删除</LinkButton>
         </template>
-      </GridColumn>
+      </GridColumn> -->
     </DataGrid>
+
+    <!-- 测评内容 -->
+    <el-dialog title="预测评内容以及预期结果" width="60%" :visible.sync="testContentVisiable">
+
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="testContentVisiable = false">取 消</el-button>
+        <el-button type="primary" @click="testContentVisiable = false">确 定</el-button>
+      </div>
+    </el-dialog>
+    <!-- 测评内容 -->
 
   </d2-container>
 </template>
@@ -39,7 +60,10 @@ export default {
       total: 20,
       pageSize: 10,
       pagePosition: 'bottom',
-      serviceTable: []
+      serviceTable: [],
+
+      // 测评内容
+      testContentVisiable: false
     }
   },
   created () {
@@ -81,6 +105,16 @@ export default {
       })
 
       console.log('cuurentRow' + JSON.stringify(currentRow))
+    },
+    /**
+     * @author Kaiyou Hu
+     * @data 2019/1/14
+     * @description 显示预评价等级的内容
+     * @param currentRow.level
+     * @return 需要评价的内容
+     */
+    showLevel: function (currentRow) {
+      this.testContentVisiable = true
     }
   }
 }
