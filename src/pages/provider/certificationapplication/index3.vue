@@ -15,6 +15,26 @@
       <el-form-item label="信息服务业务描述">
         <el-input v-model="formServiceInfo.service_describe"></el-input>
       </el-form-item>
+      <el-form-item label="信息服务业务行业">
+        <el-select v-model="formServiceInfo.service_industry">
+            <el-option
+                    v-for="item in industry"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+            </el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item label="信息服务业务业务">
+        <el-select v-model="formServiceInfo.service_procedure">
+            <el-option
+                    v-for="item in procedure"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+            </el-option>
+        </el-select>
+      </el-form-item>
       <!-- 服务基本信息填写 -->
 
       <!-- 服务评估信息填写 -->
@@ -78,9 +98,35 @@ export default {
   data () {
     return {
       formServiceInfo: {
-        service_name: '测试服务1',
-        service_describe: '测试服务1的描述'
+        service_name: '北京工商局登记全程电子化云存储租用',
+        service_describe: '北京工商局登记全程电子化云存储租用的描述',
+        service_industry: '1',
+        service_procedure: ''
       },
+      industry: [
+        {
+          value: '1',
+          label: '电力'
+        },
+        {
+          value: '2',
+          label: '煤炭'
+        }
+      ],
+      procedure: [
+        {
+          value: '1',
+          label: '网络游戏'
+        },
+        {
+          value: '2',
+          label: '信息社区平台'
+        },
+        {
+          value: '2',
+          label: '信息即时交互'
+        }
+      ],
       rules: {
         /* service_id: [
           { required: true, message: '请输入活动名称', trigger: 'blur' },
