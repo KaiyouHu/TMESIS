@@ -1,6 +1,6 @@
 {
   "name": "TMESIS",
-  "version": "1.5.3",
+  "version": "1.0.1",
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "start": "vue-cli-service serve --open",

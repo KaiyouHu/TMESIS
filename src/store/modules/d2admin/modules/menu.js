@@ -75,7 +75,7 @@ export default {
      * @param {Boolean} menu is menu
      */
     set ({ state, dispatch }, menu) {
-      console.log('menu set:' + JSON.stringify(menu.userMenu))
+      // console.log('menu set:' + JSON.stringify(menu.userMenu))
       return new Promise(async resolve => {
         // store 赋值
         state.aside = menu.userMenu
