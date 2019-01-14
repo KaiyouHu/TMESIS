@@ -78,7 +78,7 @@
 
       <el-form ref="formDependence" label-width="100px" class="demo-dynamic">
         <el-form-item
-                :label="依赖"
+                :label="'依赖'"
         >
           <el-col class="inline" :span="7" :gutter="1">
             依赖项1

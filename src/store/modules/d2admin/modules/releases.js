@@ -43,7 +43,8 @@ export default {
     versionShow (state) {
       util.log.capsule('TMESIS', `v${state.version}`)
       console.log('Github https://github.com/KaiyouHu/TMESIS')
-      console.log('Doc    https://d2-projects.github.io/d2-admin-doc/zh/')
+      console.log('Doc    https://github.com/KaiyouHu/TMESIS')
+      // console.log('Doc    https://d2-projects.github.io/d2-admin-doc/zh/')
     },
     /**
      * @description 设置是否有新的 D2Admin 版本

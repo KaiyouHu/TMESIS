@@ -40,7 +40,7 @@ const setting = {
       {
         title: '经典',
         name: 'd2',
-        preview: 'image/theme/d2/preview@2x.png'
+        preview: 'image/theme/d2/TMESIS-preview@2x.png'
       },
       {
         title: '紫罗兰',
