@@ -81,13 +81,13 @@
                 :label="'依赖'"
         >
           <el-col class="inline" :span="7" :gutter="1">
-            依赖项1
+            依赖服务编号
           </el-col>
           <el-col class="inline" :span="7" :gutter="1">
-            依赖项2
+            依赖服务
           </el-col>
           <el-col class="inline" :span="7" :gutter="1">
-            依赖项3
+            依赖服务公司
           </el-col>
         </el-form-item>
         <template v-for="(domain, index) in formDependence">

@@ -15,26 +15,33 @@
       <el-form-item label="信息服务业务描述">
         <el-input v-model="formServiceInfo.service_describe"></el-input>
       </el-form-item>
-      <el-form-item label="信息服务业务行业">
-        <el-select v-model="formServiceInfo.service_industry">
-            <el-option
-                    v-for="item in industry"
-                    :key="item.value"
-                    :label="item.label"
-                    :value="item.value">
-            </el-option>
-        </el-select>
-      </el-form-item>
-      <el-form-item label="信息服务业务业务">
-        <el-select v-model="formServiceInfo.service_procedure">
-            <el-option
-                    v-for="item in procedure"
-                    :key="item.value"
-                    :label="item.label"
-                    :value="item.value">
-            </el-option>
-        </el-select>
-      </el-form-item>
+      <el-row>
+        <el-col :span="12">
+          <el-form-item label="信息服务业务行业">
+            <el-select v-model="formServiceInfo.service_industry">
+              <el-option
+                      v-for="item in industry"
+                      :key="item.value"
+                      :label="item.label"
+                      :value="item.value">
+              </el-option>
+            </el-select>
+          </el-form-item>
+        </el-col>
+        <el-col :span="12">
+          <el-form-item label="信息服务业务业务">
+            <el-select v-model="formServiceInfo.service_procedure">
+              <el-option
+                      v-for="item in procedure"
+                      :key="item.value"
+                      :label="item.label"
+                      :value="item.value">
+              </el-option>
+            </el-select>
+          </el-form-item>
+        </el-col>
+      </el-row>
+
       <!-- 服务基本信息填写 -->
 
       <!-- 服务评估信息填写 -->
@@ -100,7 +107,7 @@ export default {
       formServiceInfo: {
         service_name: '北京工商局登记全程电子化云存储租用',
         service_describe: '北京工商局登记全程电子化云存储租用的描述',
-        service_industry: '1',
+        service_industry: '',
         service_procedure: ''
       },
       industry: [
@@ -110,7 +117,7 @@ export default {
         },
         {
           value: '2',
-          label: '煤炭'
+          label: '石油化工'
         }
       ],
       procedure: [
