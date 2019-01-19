@@ -9,11 +9,12 @@ function resolve (dir) {
 // build 路径为./ dev 路径 /
 let baseUrl = '/'
 // 演示项目自动构建使用
-if (process.env.VUE_APP_TRAVIS === 'TRUE') baseUrl = './'
+// if (process.env.VUE_APP_TRAVIS === 'TRUE') baseUrl = './'
+if (process.env.NODE_ENV === 'production') baseUrl = './'
 
 module.exports = {
   baseUrl: baseUrl, // 根据实际情况更改这里
-  // outputDir: 'docs/dist',
+  outputDir: 'docs',
   lintOnSave: true,
   runtimeCompiler: true,
   devServer: {
