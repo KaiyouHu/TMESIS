@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0c0333"],{4188:function(e,n,i){"use strict";i.r(n);var t=function(){var e=this,n=e.$createElement,i=e._self._c||n;return i("keep-alive",[i("router-view")],1)},u=[],c={name:"admin-webconfig"},l=c,o=i("2877"),a=Object(o["a"])(l,t,u,!1,null,null,null);a.options.__file="index.vue";n["default"]=a.exports}}]);
-//# sourceMappingURL=chunk-2d0c0333.9fb99e75.js.map

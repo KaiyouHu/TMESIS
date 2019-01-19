@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d21b382"],{bf9a:function(e,n,t){"use strict";t.r(n);var a=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("keep-alive",[t("router-view")],1)},u=[],i={name:"admin-usermanagement"},l=i,r=t("2877"),o=Object(r["a"])(l,a,u,!1,null,null,null);o.options.__file="index.vue";n["default"]=o.exports}}]);
-//# sourceMappingURL=chunk-2d21b382.20077ac1.js.map

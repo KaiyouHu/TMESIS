@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0df079"],{"87bf":function(e,n,t){"use strict";t.r(n);var i=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("keep-alive",[t("router-view")],1)},o=[],a={name:"monitor-certificationmanagement"},r=a,u=t("2877"),c=Object(u["a"])(r,i,o,!1,null,null,null);c.options.__file="index.vue";n["default"]=c.exports}}]);
-//# sourceMappingURL=chunk-2d0df079.b66fa1c1.js.map

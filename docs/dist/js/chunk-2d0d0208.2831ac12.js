@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0d0208"],{"673d":function(e,n,t){"use strict";t.r(n);var i=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("d2-container",[t("template",{slot:"header"},[e._v("网页配置")])],2)},a=[],l={name:"admin-webconfig-index1"},o=l,c=t("2877"),d=Object(c["a"])(o,i,a,!1,null,null,null);d.options.__file="index1.vue";n["default"]=d.exports}}]);
-//# sourceMappingURL=chunk-2d0d0208.2831ac12.js.map
