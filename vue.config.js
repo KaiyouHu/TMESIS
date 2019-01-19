@@ -13,6 +13,7 @@ if (process.env.VUE_APP_TRAVIS === 'TRUE') baseUrl = './'
 
 module.exports = {
   baseUrl: baseUrl, // 根据实际情况更改这里
+  outputDir: 'docs/dist',
   lintOnSave: true,
   runtimeCompiler: true,
   devServer: {
