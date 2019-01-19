@@ -7,6 +7,6 @@
 
 <script>
 export default {
-  name: 'monitor'
+  name: 'reviewer-certificationapplication-index5'
 }
 </script>

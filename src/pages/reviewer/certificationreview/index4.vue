@@ -38,7 +38,7 @@
 import { GetApply } from '@/api/reviewer/apply'
 
 export default {
-  name: 'monitor',
+  name: 'reviewer-certificationapplication-index4',
   data () {
     return {
       total: 20,

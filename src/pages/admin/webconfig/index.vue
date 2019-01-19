@@ -1,11 +1,11 @@
 <template>
-  <d2-container>
-    <template slot="header">Page admin webconfig</template>
-  </d2-container>
+  <keep-alive>
+    <router-view/>
+  </keep-alive>
 </template>
 
 <script>
 export default {
-  name: 'admin_webconfig'
+  name: 'admin-webconfig'
 }
 </script>

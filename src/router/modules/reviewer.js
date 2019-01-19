@@ -14,12 +14,12 @@ export default {
         { path: 'index1',
           name: `${pre}index1`,
           component: () => import('@/pages/reviewer/certificationreview/index1'),
-          meta: { meta, title: '审核者-未审核公司申请' }
+          meta: { meta, title: '未审核公司申请' }
         },
         { path: 'index2',
           name: `${pre}index2`,
           component: () => import('@/pages/reviewer/certificationreview/index2'),
-          meta: { meta, title: '审核者-未审核服务申请' }
+          meta: { meta, title: '未审核服务申请' }
         },
         { path: 'index3',
           name: `${pre}index3`,
@@ -46,7 +46,19 @@ export default {
     { path: 'accountmanagement',
       name: `${pre}accountmanagement`,
       component: () => import('@/pages/reviewer'),
-      meta: { meta, title: '账号信息管理' }
+      meta: { meta, title: '账号信息管理' },
+      children: (pre => [
+        { path: 'index1',
+          name: `${pre}index1`,
+          component: () => import('@/pages/reviewer/accountmanagement/index1'),
+          meta: { meta, title: '账号信息查看' }
+        },
+        { path: 'index2',
+          name: `${pre}index2`,
+          component: () => import('@/pages/reviewer/accountmanagement/index2'),
+          meta: { meta, title: '账号信息修改' }
+        }
+      ])('reviewer-accountmanagement-')
     }
   ])('reviewer-')
 }

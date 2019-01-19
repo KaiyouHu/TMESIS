@@ -1,13 +1,11 @@
 <template>
   <d2-container>
-    <template slot="header">Page 3 header</template>
-    Hello World
-    <template slot="footer">footer</template>
+    <template slot="header">安全认证监查</template>
   </d2-container>
 </template>
 
 <script>
 export default {
-  name: 'monitor'
+  name: 'monitor-certificationmanagement-index1'
 }
 </script>

@@ -33,6 +33,13 @@ let userDB = [
     uuid: 'monitor-uuid',
     name: '监察者',
     usertype: 'monitor'
+  },
+  {
+    username: 'sa',
+    password: '123456',
+    uuid: 'sa-uuid',
+    name: '开发者',
+    usertype: 'sa'
   }
 ]
 

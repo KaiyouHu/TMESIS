@@ -1,4 +1,4 @@
-import demo from './modules/back'
+import all from './modules/all'
 import index from './modules/index'
 
 /**
@@ -7,8 +7,8 @@ import index from './modules/index'
 const frameIn = [
   // index 目录
   index,
-  // demo 目录
-  demo
+  // all 目录
+  all
 ]
 
 /**

@@ -63,13 +63,17 @@ export default {
         {
           value: 'monitor',
           label: '监察者'
+        },
+        {
+          value: 'sa',
+          label: '开发者'
         }
       ],
       // 表单
       formLogin: {
-        username: 'admin',
+        username: 'sa',
         password: '123456',
-        usertype: 'admin'
+        usertype: 'sa'
       },
       // 校验
       rules: {

@@ -1,13 +1,12 @@
 <template>
   <d2-container>
-    <template slot="header">Page 3 header</template>
-    Hello World
-    <template slot="footer">footer</template>
+    <template slot="header">账号信息查看</template>
+
   </d2-container>
 </template>
 
 <script>
 export default {
-  name: 'monitor'
+  name: 'monitor-accountmanagement-index1'
 }
 </script>

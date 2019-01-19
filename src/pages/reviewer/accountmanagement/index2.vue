@@ -1,13 +1,11 @@
 <template>
   <d2-container>
-    <template slot="header">Page 3 header</template>
-    账户信息修改
-    <template slot="footer">footer</template>
+    <template slot="header">账户信息修改</template>
   </d2-container>
 </template>
 
 <script>
 export default {
-  name: 'monitor'
+  name: 'reviewer-accountmanagement-index2'
 }
 </script>

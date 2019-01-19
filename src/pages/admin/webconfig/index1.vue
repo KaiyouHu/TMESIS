@@ -1,11 +1,11 @@
 <template>
   <d2-container>
-    <template slot="header">Page admin webconfig 1</template>
+    <template slot="header">网页配置</template>
   </d2-container>
 </template>
 
 <script>
 export default {
-  name: 'admin_webconfig'
+  name: 'admin-webconfig-index1'
 }
 </script>

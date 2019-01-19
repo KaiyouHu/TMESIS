@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: 'certificationapplication'
+  name: 'reviewer-certificationapplication'
 }
 </script>

@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: 'monitor-accountmanagement'
+  name: 'reviewer-accountmanagement'
 }
 </script>

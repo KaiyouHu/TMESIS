@@ -94,7 +94,7 @@
 import { RetrieveASU, UpdateASU } from '@/api/dto/apply_service_user'
 
 export default {
-  name: 'certificationmanagement-index1',
+  name: 'provider-certificationmanagement-index2',
   data () {
     return {
       total: 20,

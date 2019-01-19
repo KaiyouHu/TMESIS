@@ -5,8 +5,8 @@ import { aside } from '@/menu/aside'
 import index from '@/menu/index/index'
 
 // 添加不同类型的链接
-// 目前iadmin暂不使用，admin用作开发
-// import iadmin from '@/menu/admin/admin'
+
+import admin from '@/menu/admin/admin'
 import provider from '@/menu/provider/provider'
 import reviewer from '@/menu/reviewer/reviewer'
 import monitor from '@/menu/monitor/monitor'
@@ -94,8 +94,9 @@ export default {
           switch (res.usertype) {
             // 管理员目前仅供开发使用
             case 'admin':
-              menu = header
+              // menu = header
               // menu = aside
+              menu = [...index, ...(admin[0].children)]
               break
             case 'provider':
               menu = [...index, ...(provider[0].children)]
@@ -105,6 +106,9 @@ export default {
               break
             case 'monitor':
               menu = [...index, ...(monitor[0].children)]
+              break
+            case 'sa':
+              menu = header
               break
           }
           /*  menu分离设计方法 */

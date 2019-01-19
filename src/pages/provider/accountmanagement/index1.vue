@@ -7,6 +7,6 @@
 
 <script>
 export default {
-  name: 'monitor'
+  name: 'monitor-accountmanagement-index1'
 }
 </script>

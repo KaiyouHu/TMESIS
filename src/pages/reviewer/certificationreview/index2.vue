@@ -38,7 +38,7 @@
 import { RetrieveASU, UpdateASU } from '@/api/dto/apply_service_user'
 
 export default {
-  name: 'monitor',
+  name: 'reviewer-certificationapplication-index2',
   data () {
     return {
       total: 20,

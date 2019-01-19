@@ -130,7 +130,7 @@ import { GetImportance } from '@/api/provider/importance'
 import { GetDependence } from '@/api/provider/dependence'
 
 export default {
-  name: 'certificationmanagement-index1',
+  name: 'provider-certificationmanagement-index1',
   data () {
     return {
       total: 20,

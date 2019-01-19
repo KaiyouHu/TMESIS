@@ -118,7 +118,7 @@ import { mapState } from 'vuex'
 import util from '@/libs/util.js'
 
 export default {
-  name: 'isprovider_company',
+  name: 'provider-certificationmanagement-index6',
   data () {
     return {
       total: 20,

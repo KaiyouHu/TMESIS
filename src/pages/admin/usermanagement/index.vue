@@ -1,11 +1,11 @@
 <template>
-  <d2-container>
-    <template slot="header">Page admin usermanagement</template>
-  </d2-container>
+  <keep-alive>
+    <router-view/>
+  </keep-alive>
 </template>
 
 <script>
 export default {
-  name: 'admin_usermanagement'
+  name: 'admin-usermanagement'
 }
 </script>

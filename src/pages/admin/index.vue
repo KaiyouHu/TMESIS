@@ -1,7 +1,7 @@
 <template>
-  <d2-container>
-    <template slot="header">Page admin</template>
-  </d2-container>
+  <keep-alive>
+    <router-view/>
+  </keep-alive>
 </template>
 
 <script>

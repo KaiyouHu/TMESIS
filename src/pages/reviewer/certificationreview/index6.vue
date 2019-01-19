@@ -116,7 +116,7 @@
 import { RetrieveCompany, UpdateCompany } from '@/api/reviewer/company'
 
 export default {
-  name: 'isreviewer_company',
+  name: 'reviewer-certificationapplication-index6',
   data () {
     return {
       total: 20,
