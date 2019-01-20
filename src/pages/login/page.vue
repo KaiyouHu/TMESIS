@@ -21,7 +21,7 @@
               </el-input>
             </el-form-item>
             <el-form-item prop="type">
-              <el-select v-model="formLogin.usertype" placeholder="请选择">
+              <el-select v-model="formLogin.usertype" style="width: 258px;" placeholder="请选择">
                 <el-option
                   v-for="item in usertype"
                   :key="item.value"
@@ -71,9 +71,9 @@ export default {
       ],
       // 表单
       formLogin: {
-        username: 'sa',
+        username: 'provider',
         password: '123456',
-        usertype: 'sa'
+        usertype: 'provider'
       },
       // 校验
       rules: {

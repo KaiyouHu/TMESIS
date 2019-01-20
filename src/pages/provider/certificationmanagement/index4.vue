@@ -287,3 +287,10 @@ export default {
   }
 }
 </script>
+
+<style>
+  .el_borer {
+    border: 1px solid #000000;
+    border-radius: 1px;
+  }
+</style>
