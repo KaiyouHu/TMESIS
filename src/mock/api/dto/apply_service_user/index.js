@@ -51,7 +51,6 @@ Mock.mock('/api/dto/asu/retrieve', 'post', ({ url, type, body }) => {
     asu[apply] = extend(asu[apply], serviceDB.find(e => e.service_id === asu[apply].service_id))
     asu[apply] = extend(asu[apply], companyDB.find(e => e.company_id === asu[apply].company_id))
     asu[apply] = extend(asu[apply], userDB.find(e => e.uuid === asu[apply].user_id))
-
   }
   // let asu = applyDB // .filter(e => e.flag === bodyObj.flag && e.user_id === bodyObj.user_id) // .find()
 
